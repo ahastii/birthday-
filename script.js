@@ -72,7 +72,18 @@ function startCountdown() {
 
 
 /* ================= MUSIC ================= */
+const musicBtn = document.getElementById("musicBtn");
+const music = document.getElementById("music");
 
+musicBtn.addEventListener("click", () => {
+    if (music.paused) {
+        music.play();
+        musicBtn.textContent = "Ⅱ";
+    } else {
+        music.pause();
+        musicBtn.textContent = "♫";
+    }
+});
 function startMusic() {
 
     music.play()

@@ -1,0 +1,2224 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>یه سورپرایز کوچولو برای تو 💗</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Vazirmatn,sans-serif;
+    background:#fff5fa;
+    color:#503746;
+    overflow-x:hidden;
+}
+
+body.locked{
+    overflow:hidden;
+}
+
+/* =================================
+   BACKGROUND
+================================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 15% 15%,#ffd9e9 0,transparent 24%),
+        radial-gradient(circle at 85% 70%,#e8ddff 0,transparent 27%),
+        radial-gradient(circle at 50% 100%,#ffe5f1 0,transparent 35%),
+        #fff9fc;
+}
+
+.blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(65px);
+    opacity:.4;
+    animation:blobMove 12s infinite alternate ease-in-out;
+}
+
+.blob.one{
+    width:280px;
+    height:280px;
+    background:#ffc1dc;
+    top:5%;
+    right:-80px;
+}
+
+.blob.two{
+    width:330px;
+    height:330px;
+    background:#d8c7ff;
+    bottom:10%;
+    left:-100px;
+    animation-delay:2s;
+}
+
+@keyframes blobMove{
+    to{
+        transform:translate(60px,-40px) scale(1.15);
+    }
+}
+
+/* =================================
+   CUTE FLOATING ELEMENTS
+================================= */
+
+#cuteBackground{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.cute-item{
+    position:absolute;
+    bottom:-50px;
+    opacity:0;
+    animation:floatCute linear forwards;
+    filter:drop-shadow(0 5px 8px rgba(190,90,140,.12));
+}
+
+@keyframes floatCute{
+
+    0%{
+        transform:translateY(0) rotate(-10deg) scale(.7);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.8;
+    }
+
+    50%{
+        transform:translateY(-50vh) rotate(10deg) scale(1);
+    }
+
+    100%{
+        transform:translateY(-115vh) rotate(-15deg) scale(.8);
+        opacity:0;
+    }
+}
+
+/* =================================
+   INTRO
+================================= */
+
+.intro{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        radial-gradient(circle at 50% 20%,#ffe1ef,transparent 35%),
+        linear-gradient(135deg,#fff3f8,#ffe2ee);
+
+    transition:1s ease;
+}
+
+.intro.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.intro-card{
+    width:min(92%,500px);
+    padding:35px 25px;
+    position:relative;
+}
+
+/* Cute animals around intro */
+
+.intro-animal{
+    position:absolute;
+    font-size:45px;
+    animation:animalFloat 3s ease-in-out infinite;
+}
+
+.intro-animal.a1{
+    top:0;
+    right:10px;
+}
+
+.intro-animal.a2{
+    bottom:10px;
+    left:5px;
+    animation-delay:1s;
+}
+
+.intro-animal.a3{
+    top:100px;
+    left:-10px;
+    font-size:35px;
+    animation-delay:.5s;
+}
+
+@keyframes animalFloat{
+    0%,100%{
+        transform:translateY(0) rotate(-5deg);
+    }
+
+    50%{
+        transform:translateY(-12px) rotate(5deg);
+    }
+}
+
+.intro-emoji{
+    font-size:72px;
+    display:block;
+    animation:bounce 2s infinite;
+    margin-bottom:20px;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0) rotate(-4deg);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(4deg);
+    }
+}
+
+.intro small{
+    color:#c77b9c;
+    letter-spacing:3px;
+}
+
+.intro h1{
+    font-size:clamp(34px,8vw,65px);
+    margin:12px 0;
+    color:#a83d6d;
+}
+
+.intro p{
+    color:#8e6879;
+    line-height:2;
+    margin-bottom:25px;
+}
+
+/* =================================
+   COUNTDOWN
+================================= */
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:20px auto 25px;
+    direction:ltr;
+}
+
+.time-box{
+    width:62px;
+    height:68px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.75);
+    border:1px solid rgba(255,255,255,.9);
+
+    box-shadow:
+        0 10px 25px rgba(190,80,130,.12),
+        inset 0 1px 0 white;
+
+    backdrop-filter:blur(10px);
+}
+
+.time-box strong{
+    font-size:22px;
+    color:#b84678;
+}
+
+.time-box span{
+    font-size:9px;
+    color:#b98098;
+    margin-top:2px;
+}
+
+.countdown-title{
+    font-size:12px;
+    color:#b56b89;
+    margin-bottom:8px;
+}
+
+/* =================================
+   OPEN BUTTON
+================================= */
+
+.open-btn{
+    border:0;
+    background:linear-gradient(135deg,#ff78b3,#ec5e9c);
+    color:white;
+
+    padding:16px 32px;
+
+    border-radius:50px;
+
+    font-family:inherit;
+    font-size:15px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 15px 35px rgba(255,111,174,.3);
+
+    transition:.3s;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.open-btn:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+
+.open-btn:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+    animation:shineButton 3s infinite;
+}
+
+@keyframes shineButton{
+    0%{
+        left:-100%;
+    }
+
+    45%,100%{
+        left:130%;
+    }
+}
+
+/* =================================
+   MUSIC
+================================= */
+
+.music{
+    position:fixed;
+    top:20px;
+    left:20px;
+
+    width:48px;
+    height:48px;
+
+    border:0;
+    border-radius:50%;
+
+    background:white;
+    color:#d84e88;
+
+    box-shadow:0 8px 25px #b85c8530;
+
+    cursor:pointer;
+    z-index:100;
+
+    font-size:20px;
+}
+
+/* =================================
+   CUTE CHICKEN CURSOR
+================================= */
+
+.cursor-chick{
+    position:fixed;
+
+    width:35px;
+    height:35px;
+
+    pointer-events:none;
+    z-index:10000;
+
+    transform:translate(-50%,-50%);
+
+    transition:
+        width .2s ease,
+        height .2s ease,
+        transform .08s linear;
+
+    display:none;
+}
+
+.chick-body{
+    position:absolute;
+
+    width:25px;
+    height:25px;
+
+    left:5px;
+    top:7px;
+
+    background:#fff4a8;
+
+    border-radius:50% 50% 45% 45%;
+
+    box-shadow:
+        0 4px 12px rgba(215,160,70,.25);
+}
+
+.chick-body:before{
+    content:"";
+    position:absolute;
+
+    width:7px;
+    height:5px;
+
+    background:#f19b35;
+
+    border-radius:50%;
+
+    right:-4px;
+    top:10px;
+
+    transform:rotate(-15deg);
+}
+
+.chick-eye{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    background:#493238;
+
+    border-radius:50%;
+
+    top:14px;
+}
+
+.chick-eye.one{
+    left:10px;
+}
+
+.chick-eye.two{
+    right:9px;
+}
+
+.chick-wing{
+    position:absolute;
+
+    width:9px;
+    height:13px;
+
+    background:#ffe987;
+
+    border-radius:50%;
+
+    top:14px;
+    left:0;
+
+    transform:rotate(25deg);
+}
+
+.chick-feet{
+    position:absolute;
+
+    width:7px;
+    height:3px;
+
+    border-bottom:2px solid #ed9c35;
+
+    border-radius:50%;
+
+    bottom:0;
+}
+
+.chick-feet.one{
+    left:8px;
+}
+
+.chick-feet.two{
+    right:7px;
+}
+
+.chick-heart{
+    position:absolute;
+    top:-5px;
+    right:-3px;
+
+    font-size:11px;
+
+    animation:heartBeat 1s infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.35);
+    }
+}
+
+.cursor-spark{
+    position:fixed;
+    pointer-events:none;
+    z-index:9998;
+
+    font-size:10px;
+
+    animation:sparkFade .7s ease forwards;
+}
+
+@keyframes sparkFade{
+    0%{
+        transform:scale(.5) translateY(0);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1.4) translateY(-15px);
+        opacity:0;
+    }
+}
+
+@media (pointer:fine){
+
+    .cursor-chick{
+        display:block;
+    }
+
+    body{
+        cursor:none;
+    }
+
+    button,
+    .gift,
+    .envelope,
+    .polaroid{
+        cursor:none;
+    }
+}
+
+/* =================================
+   HERO
+================================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:80px 7%;
+
+    position:relative;
+}
+
+.hero-inner{
+    max-width:850px;
+    text-align:center;
+}
+
+.mini{
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:white;
+
+    color:#d15a8b;
+
+    font-size:13px;
+
+    box-shadow:0 8px 25px #b95b8520;
+}
+
+.hero h2{
+    margin:25px 0 10px;
+
+    font-size:clamp(45px,9vw,100px);
+
+    color:#9d3d68;
+
+    line-height:1;
+}
+
+.hero h2 span{
+    display:block;
+
+    font-family:Pacifico,cursive;
+
+    color:#f05d9d;
+
+    font-size:.65em;
+
+    margin-top:15px;
+}
+
+.hero p{
+    max-width:600px;
+
+    margin:30px auto;
+
+    line-height:2.1;
+
+    color:#806675;
+}
+
+.scroll{
+    margin-top:50px;
+
+    animation:down 1.5s infinite;
+
+    color:#bd7996;
+}
+
+@keyframes down{
+    50%{
+        transform:translateY(8px);
+    }
+}
+
+/* =================================
+   SECTION
+================================= */
+
+section{
+    padding:110px 7%;
+    position:relative;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title span{
+    color:#ed679f;
+    font-size:13px;
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    font-size:clamp(30px,5vw,55px);
+    color:#713d55;
+    margin-top:10px;
+}
+
+/* =================================
+   PHOTO
+================================= */
+
+.photo-section{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.photo-card{
+    width:min(380px,90vw);
+
+    padding:15px;
+
+    background:white;
+
+    border-radius:25px;
+
+    box-shadow:0 30px 70px #9e527520;
+
+    transform:rotate(-3deg);
+
+    transition:.5s;
+}
+
+.photo-card:hover{
+    transform:rotate(0) translateY(-10px);
+}
+
+.photo-card img{
+    display:block;
+
+    width:100%;
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+
+    border-radius:17px;
+}
+
+.photo-caption{
+    text-align:center;
+    padding:18px 5px 10px;
+    color:#9b6179;
+}
+
+.photo-caption b{
+    display:block;
+
+    color:#c3477c;
+
+    font-size:19px;
+
+    margin-bottom:5px;
+}
+
+/* =================================
+   POLAROIDS
+================================= */
+
+.memory{
+    max-width:950px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.polaroid{
+    background:white;
+
+    padding:12px 12px 35px;
+
+    box-shadow:0 15px 40px #91476d20;
+
+    transition:.5s;
+}
+
+.polaroid:nth-child(1){
+    transform:rotate(-5deg);
+}
+
+.polaroid:nth-child(2){
+    transform:rotate(3deg) translateY(25px);
+}
+
+.polaroid:nth-child(3){
+    transform:rotate(-2deg);
+}
+
+.polaroid:hover{
+    transform:translateY(-15px) rotate(0);
+}
+
+.polaroid img{
+    width:100%;
+    aspect-ratio:1;
+
+    object-fit:cover;
+}
+
+.polaroid p{
+    text-align:center;
+
+    margin-top:15px;
+
+    color:#956478;
+}
+
+/* =================================
+   VIDEO
+================================= */
+
+.video-section{
+    background:#fff;
+}
+
+.video-box{
+    max-width:850px;
+
+    margin:auto;
+
+    background:#ffeaf3;
+
+    padding:12px;
+
+    border-radius:30px;
+
+    box-shadow:0 30px 70px #a74e7620;
+
+    position:relative;
+}
+
+.video-box video{
+    display:block;
+
+    width:100%;
+
+    max-height:600px;
+
+    border-radius:22px;
+
+    background:#24141d;
+}
+
+.video-note{
+    text-align:center;
+
+    padding:20px 10px 10px;
+
+    color:#a2657e;
+}
+
+/* =================================
+   LETTER
+================================= */
+
+.letter-section{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.envelope{
+    width:min(700px,92vw);
+
+    cursor:pointer;
+
+    perspective:1000px;
+}
+
+.envelope-front{
+    background:#f5c4d8;
+
+    border-radius:25px;
+
+    padding:70px 30px;
+
+    text-align:center;
+
+    box-shadow:0 30px 70px #a44c7025;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.envelope-front:before{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:#fff4fa66;
+
+    top:-150px;
+    left:-100px;
+}
+
+.envelope-icon{
+    font-size:65px;
+
+    display:block;
+
+    margin-bottom:20px;
+
+    animation:wiggle 2s infinite;
+}
+
+@keyframes wiggle{
+
+    0%,100%{
+        transform:rotate(0);
+    }
+
+    25%{
+        transform:rotate(-7deg);
+    }
+
+    75%{
+        transform:rotate(7deg);
+    }
+}
+
+.envelope-front h3{
+    font-size:28px;
+    color:#8d3c5f;
+}
+
+.envelope-front p{
+    color:#a46078;
+    margin-top:10px;
+}
+
+.letter-content{
+    max-height:0;
+
+    overflow:hidden;
+
+    background:#fffdf8;
+
+    border-radius:0 0 25px 25px;
+
+    transition:1s ease;
+}
+
+.envelope.open .letter-content{
+    max-height:900px;
+    padding:50px;
+}
+
+.letter-content h3{
+    color:#bd4e7f;
+    margin-bottom:25px;
+}
+
+.letter-content p{
+    line-height:2.5;
+    color:#705763;
+    margin-bottom:20px;
+}
+
+.signature{
+    color:#db5790!important;
+
+    font-weight:700;
+
+    font-size:20px;
+}
+
+/* =================================
+   BEAUTIFUL GIFT
+================================= */
+
+.surprise-section{
+    min-height:85vh;
+    text-align:center;
+
+    overflow:hidden;
+}
+
+.gift{
+    width:210px;
+    height:180px;
+
+    margin:70px auto 40px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transition:.5s;
+
+    filter:drop-shadow(
+        0 25px 30px rgba(210,70,130,.22)
+    );
+}
+
+.gift:hover{
+    transform:translateY(-15px) rotate(-2deg) scale(1.04);
+}
+
+.gift-body{
+    position:absolute;
+
+    bottom:0;
+    left:20px;
+
+    width:170px;
+    height:115px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff91bd,
+            #ec5b9a
+        );
+
+    border-radius:14px 14px 20px 20px;
+
+    box-shadow:
+        inset 0 8px 15px rgba(255,255,255,.18);
+}
+
+.gift-body:before{
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    border-radius:inherit;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.25) 2px,
+            transparent 3px
+        );
+
+    background-size:18px 18px;
+
+    opacity:.35;
+}
+
+.gift-lid{
+    position:absolute;
+
+    top:35px;
+    left:10px;
+
+    width:190px;
+    height:42px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff76ae,
+            #df4c8b
+        );
+
+    border-radius:12px;
+
+    z-index:3;
+
+    box-shadow:
+        0 7px 12px rgba(190,60,120,.18);
+}
+
+.ribbon{
+    position:absolute;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffe990,
+            #ffc95c
+        );
+
+    z-index:4;
+
+    box-shadow:
+        inset 0 0 8px rgba(255,255,255,.4);
+}
+
+.ribbon.v{
+    width:30px;
+    height:145px;
+
+    left:90px;
+    bottom:0;
+
+    border-radius:5px;
+}
+
+.ribbon.h{
+    width:190px;
+    height:18px;
+
+    left:10px;
+    top:48px;
+
+    border-radius:4px;
+}
+
+.bow{
+    position:absolute;
+
+    top:0;
+    left:58px;
+
+    width:95px;
+    height:45px;
+
+    z-index:5;
+}
+
+.bow:before,
+.bow:after{
+    content:"";
+
+    position:absolute;
+
+    width:55px;
+    height:38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe98c,
+            #ffc75b
+        );
+
+    border-radius:70% 20% 70% 20%;
+
+    box-shadow:
+        0 5px 10px rgba(200,130,40,.15);
+}
+
+.bow:before{
+    left:0;
+    transform:rotate(25deg);
+}
+
+.bow:after{
+    right:0;
+    transform:scaleX(-1) rotate(25deg);
+}
+
+.bow{
+    animation:bowFloat 1.8s ease-in-out infinite;
+}
+
+@keyframes bowFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(0);
+    }
+
+    50%{
+        transform:translateY(-5px) rotate(2deg);
+    }
+}
+
+.gift-spark{
+    position:absolute;
+
+    color:#ffd96a;
+
+    font-size:20px;
+
+    animation:sparkle 1.4s infinite;
+}
+
+.gift-spark.s1{
+    top:20px;
+    left:0;
+}
+
+.gift-spark.s2{
+    top:80px;
+    right:-5px;
+
+    animation-delay:.4s;
+}
+
+.gift-spark.s3{
+    bottom:5px;
+    left:-10px;
+
+    animation-delay:.8s;
+}
+
+@keyframes sparkle{
+
+    0%,100%{
+        opacity:.3;
+        transform:scale(.7) rotate(0);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.3) rotate(25deg);
+    }
+}
+
+.surprise-text{
+    opacity:0;
+
+    transform:translateY(20px) scale(.95);
+
+    transition:.7s;
+}
+
+.surprise-text.show{
+    opacity:1;
+
+    transform:translateY(0) scale(1);
+}
+
+.surprise-text h3{
+    color:#db4f89;
+
+    font-size:32px;
+}
+
+.surprise-text p{
+    color:#856374;
+
+    margin-top:15px;
+}
+
+/* =================================
+   FINAL
+================================= */
+
+.final{
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    flex-direction:column;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #ffe1ee,
+            #fff5fa 55%
+        );
+}
+
+.final .cake{
+    font-size:90px;
+
+    animation:bounce 2s infinite;
+}
+
+.final h2{
+    font-size:clamp(40px,8vw,80px);
+
+    color:#a23f6c;
+
+    margin:20px 0;
+}
+
+.final h2 span{
+    color:#f05f9e;
+}
+
+.final p{
+    color:#8d6a79;
+}
+
+footer{
+    text-align:center;
+
+    padding:35px;
+
+    color:#a78392;
+
+    font-size:12px;
+}
+
+/* =================================
+   CONFETTI
+================================= */
+
+.confetti{
+    position:fixed;
+
+    top:-20px;
+
+    width:9px;
+    height:14px;
+
+    z-index:10000;
+
+    pointer-events:none;
+
+    animation:confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall{
+
+    to{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media(max-width:700px){
+
+    section{
+        padding:80px 5%;
+    }
+
+    .memory{
+        grid-template-columns:1fr;
+
+        max-width:330px;
+
+        gap:35px;
+    }
+
+    .polaroid:nth-child(2){
+        transform:rotate(3deg);
+    }
+
+    .hero{
+        padding-top:100px;
+    }
+
+    .hero h2{
+        font-size:clamp(42px,14vw,70px);
+    }
+
+    .intro-card{
+        padding:25px 15px;
+    }
+
+    .intro h1{
+        font-size:38px;
+    }
+
+    .countdown{
+        gap:6px;
+    }
+
+    .time-box{
+        width:55px;
+        height:62px;
+    }
+
+    .time-box strong{
+        font-size:19px;
+    }
+
+    .envelope.open .letter-content{
+        padding:35px 23px;
+    }
+
+    .gift{
+        transform:scale(.9);
+    }
+
+    .gift:hover{
+        transform:translateY(-10px) scale(.94);
+    }
+
+    .section-title{
+        margin-bottom:45px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+        line-height:1.6;
+    }
+
+    .video-box{
+        padding:7px;
+        border-radius:20px;
+    }
+
+    .video-box video{
+        border-radius:15px;
+    }
+
+}
+
+/* گوشی‌های خیلی کوچک */
+
+@media(max-width:380px){
+
+    .countdown{
+        transform:scale(.9);
+    }
+
+    .intro-animal{
+        font-size:32px;
+    }
+
+    .intro h1{
+        font-size:32px;
+    }
+
+}
+
+</style>
+</head>
+
+<body class="locked">
+
+<!-- =================================
+     INTRO
+================================= -->
+
+<div class="intro" id="intro">
+
+    <div class="intro-card">
+
+        <div class="intro-animal a1">🐰</div>
+        <div class="intro-animal a2">🐻</div>
+        <div class="intro-animal a3">🐥</div>
+
+        <span class="intro-emoji">🎁</span>
+
+        <small>HEY YOU...</small>
+
+        <h1>یه چیزی برات دارم عزیزم!</h1>
+
+        <p>
+            این صفحه معمولی نیست...
+            <br>
+            ولی اینو باید بدونی که با کلیی ذوق برات درستش کردم :)
+        </p>
+
+        <button class="open-btn" id="openBtn">
+            بازش کن 🎀
+        </button>
+
+    </div>
+
+</div>
+
+<!-- BACKGROUND -->
+
+<div class="background">
+
+    <div class="blob one"></div>
+    <div class="blob two"></div>
+
+</div>
+
+<div id="cuteBackground"></div>
+
+<!-- MUSIC -->
+
+<button class="music" id="musicBtn">♫</button>
+
+<audio id="music" loop>
+    <source src="song/Elvis_Presley_Cant_Help_Falling_In_Love_320.mp3" type="audio/mpeg">
+</audio>
+
+<!-- CUTE CHICKEN CURSOR -->
+
+<div class="cursor-chick" id="cursorChick">
+
+    <div class="chick-body">
+
+        <div class="chick-eye one"></div>
+        <div class="chick-eye two"></div>
+
+        <div class="chick-wing"></div>
+
+        <div class="chick-feet one"></div>
+        <div class="chick-feet two"></div>
+
+    </div>
+
+    <div class="chick-heart">♡</div>
+
+</div>
+
+<!-- =================================
+     HERO
+================================= -->
+
+<main class="hero">
+
+    <div class="hero-inner">
+
+
+        <h2>
+
+            تولدت مبارک
+
+            <span>
+                Darling ♡
+            </span>
+
+        </h2>
+
+        <p>
+
+            یه نفر امروز یه سال بزرگ‌تر شد...
+
+            <br>
+
+            ولی خوشبختانه هنوز همون آدم بامزه قبلیهههه :))
+
+        </p>
+
+        <div class="scroll">
+
+            ↓
+
+            <br>
+
+            بیا پایین
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- =================================
+     PHOTO
+================================= -->
+
+<section class="photo-section">
+
+    <div>
+
+        <div class="section-title">
+
+            <span>
+                THE MAIN CHARACTER
+            </span>
+
+            <h2>
+                خب حالا صاحب تولد رو ببینیم :)
+            </h2>
+
+        </div>
+
+        <div class="photo-card">
+
+            <img
+                src="behnam.jpg"
+                alt="Behnam">
+
+            <div class="photo-caption">
+
+                <b>
+                    آقای تولد 🎂
+                </b>
+
+                امروز رسماً یک سال خفن‌تر شدی!
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     MEMORIES
+================================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <span>
+            SOME LITTLE MEMORIES
+        </span>
+
+        <h2>
+            چندتا عکس برای ثبت این روز 📸
+        </h2>
+
+    </div>
+
+    <div class="memory">
+
+        <div class="polaroid">
+
+            <img
+                src="photo1.jpg"
+                alt="memory">
+
+            <p>
+                این یکی خیلی خوبه :)
+            </p>
+
+        </div>
+
+        <div class="polaroid">
+
+            <img
+                src="photo2.jpg"
+                alt="memory">
+
+            <p>
+                اینم از اون خاطره‌هاست ♡
+            </p>
+
+        </div>
+
+        <div class="polaroid">
+
+            <img
+                src="photo3.jpg"
+                alt="memory">
+
+            <p>
+                و این یکی...
+                بدون توضیح 😂
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     VIDEO
+================================= -->
+
+<section class="video-section">
+
+    <div class="section-title">
+
+        <span>
+            A LITTLE VIDEO
+        </span>
+
+        <h2>
+            اینو حتماً ببین 🎬
+        </h2>
+
+    </div>
+
+    <div class="video-box">
+
+        <video
+            controls
+            playsinline
+            poster="video-cover.jpg">
+
+            <source
+                src="birthday-video.mp4"
+                type="video/mp4">
+
+            مرورگر شما از ویدیو پشتیبانی نمی‌کند.
+
+        </video>
+
+        <div class="video-note">
+
+            یه ویدیوی کوچولو برای یه آدم خاص 🤍
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     LETTER
+================================= -->
+
+<section class="letter-section">
+
+    <div class="envelope" id="envelope">
+
+        <div class="envelope-front">
+
+            <span class="envelope-icon">
+                💌
+            </span>
+
+            <h3>
+                یه نامه برای تو
+            </h3>
+
+            <p>
+                روش کلیک کن تا بازش کنم...
+            </p>
+
+        </div>
+
+        <div class="letter-content">
+
+            <h3>
+                بهنام عزیز،
+            </h3>
+
+            <p>
+                خب...
+                بالاخره رسیدیم به قسمت نامه :)
+            </p>
+
+            <p>
+
+                تولدت مبارک!
+
+                امیدوارم سال جدید زندگیت پر از اتفاق‌های
+                خوب، خنده‌های واقعی، آدم‌های درست
+                و کلی لحظه قشنگ باشه.
+
+            </p>
+
+            <p>
+
+                امیدوارم به چیزهایی که می‌خوای برسی،
+                کلی تجربه خوب داشته باشی
+                و هر روز یه دلیل جدید برای خوشحال بودن پیدا کنی.
+
+            </p>
+
+            <p>
+
+                و مهم‌تر از همه،
+
+                امیدوارم همیشه همون خود واقعی و بامزه خودت بمونی.
+
+            </p>
+
+            <p class="signature">
+
+                تولدت مبارک 🤍
+
+                <br>
+
+                از طرف کسی که این صفحه رو برات ساخته :)
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     BEAUTIFUL GIFT
+================================= -->
+
+<section class="surprise-section">
+
+    <div class="section-title">
+
+        <span>
+            ONE MORE THING...
+        </span>
+
+        <h2>
+            فکر کردی تموم شد؟ 👀
+        </h2>
+
+    </div>
+
+    <div class="gift" id="gift">
+
+        <span class="gift-spark s1">✦</span>
+        <span class="gift-spark s2">✧</span>
+        <span class="gift-spark s3">✦</span>
+
+        <div class="gift-body"></div>
+
+        <div class="gift-lid"></div>
+
+        <div class="ribbon v"></div>
+
+        <div class="ribbon h"></div>
+
+        <div class="bow"></div>
+
+    </div>
+
+    <div class="surprise-text" id="surprise">
+
+        <h3>
+            SURPRISEEEE! 🎉
+        </h3>
+
+        <p>
+            امیدوارم این کوچولوترین کاری باشه
+            که امروز باعث لبخندت شده :)
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     FINAL
+================================= -->
+
+<section class="final">
+
+    <div class="cake">
+        🎂
+    </div>
+
+    <h2>
+
+        Happy Birthday
+
+        <span>
+            Behnam ♡
+        </span>
+
+    </h2>
+
+    <p>
+
+        امیدوارم بهترین فصل زندگیت هنوز شروع نشده باشه...
+
+        <br>
+
+        چون قراره تازه کلی اتفاق خوب بیفته ✨
+
+    </p>
+
+</section>
+
+<footer>
+
+    Made with ♡ just for you
+
+</footer>
+
+<script>
+
+/* =================================
+   INTRO + COUNTDOWN
+================================= */
+
+const intro = document.getElementById("intro");
+const openBtn = document.getElementById("openBtn");
+
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
+
+let musicPlaying = false;
+
+let countdown = 3;
+
+const count3 = document.getElementById("count3");
+const count2 = document.getElementById("count2");
+const count1 = document.getElementById("count1");
+
+function updateCountdown(){
+
+    count3.textContent =
+        countdown === 3 ? "03" : "♡";
+
+    count2.textContent =
+        countdown === 2 ? "02" : countdown < 2 ? "♡" : "♡";
+
+    count1.textContent =
+        countdown === 1 ? "01" : countdown < 1 ? "♡" : "♡";
+}
+
+const countdownTimer = setInterval(() => {
+
+    countdown--;
+
+    updateCountdown();
+
+    if(countdown <= 0){
+
+        clearInterval(countdownTimer);
+
+        openBtn.style.animation =
+            "pulseButton .8s ease infinite alternate";
+
+    }
+
+},1000);
+
+openBtn.addEventListener("click", () => {
+
+    intro.classList.add("hide");
+
+    document.body.classList.remove("locked");
+
+    music.play()
+        .then(() => {
+
+            musicPlaying = true;
+
+            musicBtn.textContent = "❚❚";
+
+        })
+        .catch(() => {});
+
+    createConfetti();
+
+});
+
+
+/* =================================
+   MUSIC
+================================= */
+
+musicBtn.addEventListener("click", () => {
+
+    if(musicPlaying){
+
+        music.pause();
+
+        musicPlaying = false;
+
+        musicBtn.textContent = "♫";
+
+    }else{
+
+        music.play();
+
+        musicPlaying = true;
+
+        musicBtn.textContent = "❚❚";
+
+    }
+
+});
+
+
+/* =================================
+   CUTE BACKGROUND
+================================= */
+
+const cuteBackground =
+    document.getElementById("cuteBackground");
+
+const cuteItems = [
+
+    "♡",
+    "♥",
+    "💗",
+    "💖",
+    "💕",
+    "✦",
+    "✧",
+    "✨",
+    "🌸",
+    "🌷",
+    "🐰",
+    "🐻",
+    "🐥",
+    "🐱"
+
+];
+
+function createCuteItem(){
+
+    const item =
+        document.createElement("span");
+
+    item.className = "cute-item";
+
+    item.textContent =
+        cuteItems[
+            Math.floor(
+                Math.random() *
+                cuteItems.length
+            )
+        ];
+
+    item.style.left =
+        Math.random() * 100 + "%";
+
+    item.style.fontSize =
+        Math.random() * 16 + 12 + "px";
+
+    item.style.animationDuration =
+        Math.random() * 6 + 7 + "s";
+
+    item.style.animationDelay =
+        Math.random() * 2 + "s";
+
+    cuteBackground.appendChild(item);
+
+    setTimeout(() => {
+
+        item.remove();
+
+    },15000);
+
+}
+
+/* تعداد کم تا سایت شلوغ و سنگین نشود */
+
+setInterval(createCuteItem,650);
+
+
+/* =================================
+   CHICKEN CURSOR
+================================= */
+
+const cursorChick =
+    document.getElementById("cursorChick");
+
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener("mousemove",(e)=>{
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursorChick.style.left =
+        mouseX + "px";
+
+    cursorChick.style.top =
+        mouseY + "px";
+
+});
+
+
+/* Sparkles around cursor */
+
+let lastSpark = 0;
+
+document.addEventListener("mousemove",(e)=>{
+
+    const now = Date.now();
+
+    if(now - lastSpark < 120) return;
+
+    lastSpark = now;
+
+    const spark =
+        document.createElement("span");
+
+    spark.className =
+        "cursor-spark";
+
+    spark.textContent =
+        Math.random() > .5
+        ? "✦"
+        : "♡";
+
+    spark.style.left =
+        e.clientX +
+        (Math.random()*15-7) +
+        "px";
+
+    spark.style.top =
+        e.clientY +
+        (Math.random()*15-7) +
+        "px";
+
+    document.body.appendChild(spark);
+
+    setTimeout(() => {
+
+        spark.remove();
+
+    },700);
+
+});
+
+
+/* Cursor reaction */
+
+document.querySelectorAll(
+    "button,.gift,.envelope,.polaroid"
+).forEach(element => {
+
+    element.addEventListener("mouseenter",()=>{
+
+        cursorChick.style.transform =
+            "translate(-50%,-50%) scale(1.35) rotate(-8deg)";
+
+    });
+
+    element.addEventListener("mouseleave",()=>{
+
+        cursorChick.style.transform =
+            "translate(-50%,-50%) scale(1)";
+
+    });
+
+});
+
+
+/* =================================
+   LETTER
+================================= */
+
+const envelope =
+    document.getElementById("envelope");
+
+envelope.addEventListener("click",()=>{
+
+    envelope.classList.toggle("open");
+
+});
+
+
+/* =================================
+   GIFT
+================================= */
+
+const gift =
+    document.getElementById("gift");
+
+const surprise =
+    document.getElementById("surprise");
+
+gift.addEventListener("click",()=>{
+
+    surprise.classList.add("show");
+
+    createConfetti();
+
+    gift.style.transform =
+        "translateY(-10px) scale(.9)";
+
+    setTimeout(()=>{
+
+        gift.style.transform =
+            "translateY(0) scale(1)";
+
+    },500);
+
+});
+
+
+/* =================================
+   CONFETTI
+================================= */
+
+function createConfetti(){
+
+    const colors = [
+
+        "#ff6fae",
+        "#ffd166",
+        "#b79cff",
+        "#79d9ff",
+        "#ff9dca"
+
+    ];
+
+    for(let i=0;i<70;i++){
+
+        const piece =
+            document.createElement("div");
+
+        piece.className =
+            "confetti";
+
+        piece.style.left =
+            Math.random()*100+"vw";
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
+
+        piece.style.animationDuration =
+            Math.random()*2+2+"s";
+
+        piece.style.animationDelay =
+            Math.random()*.4+"s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(()=>{
+
+            piece.remove();
+
+        },3500);
+
+    }
+
+}
+
+
+/* =================================
+   PARALLAX
+================================= */
+
+document.addEventListener(
+    "mousemove",
+    (e)=>{
+
+        const x =
+            (e.clientX /
+            window.innerWidth -
+            .5) * 8;
+
+        const y =
+            (e.clientY /
+            window.innerHeight -
+            .5) * 8;
+
+        document
+            .querySelectorAll(".blob")
+            .forEach((blob,index)=>{
+
+                blob.style.transform =
+                    `translate(
+                        ${x*(index+1)}px,
+                        ${y*(index+1)}px
+                    )`;
+
+            });
+
+    }
+);
+
+
+/* =================================
+   VIDEO
+================================= */
+
+const video =
+    document.querySelector("video");
+
+if(video){
+
+    video.addEventListener("play",()=>{
+
+        music.pause();
+
+        musicBtn.textContent = "♫";
+
+        musicPlaying = false;
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
+```
